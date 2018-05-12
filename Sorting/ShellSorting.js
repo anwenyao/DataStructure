@@ -8,7 +8,6 @@ console.log(arr);
 function ShellSorting(arr){
 	//储存d的增量数组
 	let len = arr.length;
-	console.log(len/2);
 	let temp;//记录当前需要被插入的数
 	let d = parseInt(len/2);//增量设置为n/2
 	for(let i = parseInt(len/2);i >= 1;i=parseInt(i/2)){
