@@ -8,11 +8,11 @@
 function partition(arr,low,high){
 	let key = arr[low];//记录关键字的下标
 	while(low < high){	
-		while(arr[high] > key && low < high){
+		while(arr[high] >= key && low < high){
 			high--;
 		}
 		arr[low] = arr[high];
-		while(arr[low] < key && low < high){
+		while(arr[low] <= key && low < high){
 			low++;
 		}
 		arr[high] = arr[low];
