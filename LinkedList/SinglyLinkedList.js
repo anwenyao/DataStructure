@@ -62,7 +62,8 @@ LinkedList.prototype.toString = function(){
 };
 //删除链表指定的节点 传入要删除的节点从1开始
 LinkedList.prototype.remove = function(index){
-	index = index?index:this.length;//如果没有参数 默认删除最后一个
+	//(index!=null)判断避免传入0 if(0)判断为假，会给index重新赋值this.length
+	index = (index!=null)?index:this.length;//如果没有参数 默认删除最后一个
 	let current = this.head;
 	let count = 1;//下标+1
 	if(this.head == null || index > this.length || index < 1){
@@ -81,6 +82,45 @@ LinkedList.prototype.remove = function(index){
 
 	}
 };
+//插入节点 将节点插入到指定位置
+LinkedList.prototype.insert = function(element,index){//数据 和 插入的位置
+	index = (index!=null)?index:this.length + 1;//如果没有参数 默认插入到最后一个
+	let current = this.head;
+	let node = new Node(element); 
+	let count = 1;
+	if(this.head == null || index > this.length + 1 || index < 1){
+		console.log("此节点不存在！");
+	}else{
+		if(index == 1){
+			node.next = this.head;
+			this.head = node;
+		}else{
+			while(count++ != index - 1){
+				current = current.next;
+			}
+			node.next = current.next;
+			current.next = node;
+		}
+		this.length++;
+	}	
+};
+
+//查找节点 
+LinkedList.prototype.find = function(index){//参数：节点位置（从1开始） 返回：节点的内容
+	index = (index!=null)?index:this.length + 1;
+	let count = 1;
+	let current = this.head;
+	if(this.head == null || index > this.length || index < 1){
+		console.log("此节点不存在！");
+		return null;
+	}else{
+		while(count++ != index){
+			current = current.next;
+		}
+		return current.element;
+	
+	}	
+};
 
 
 let list1 = new LinkedList();
@@ -91,8 +131,9 @@ list1.add("horse");
 list1.add("horse");
 list1.add("apple");
 console.log("list1 :"+list1.toString());
-list1.remove(1);
-list1.remove(1);
-list1.remove();
-console.log("list1 :"+list1.toString());
+console.log("查找的节点：",list1.find(5));
+// console.log("length:",list1.length);
+// list1.insert("haha",1);
+// console.log("list1 :"+list1.toString());
+// console.log("length:",list1.length);
 
