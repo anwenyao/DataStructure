@@ -29,8 +29,11 @@ function QuikSorting(arr,low,high){
 	}
 }//end of QuikSorting
 
-//let arr = [24,6,56,96,12,46,25,36,45,69];
-let arr = [1,16,56,96,2,46,225,34,45,9];
-console.log(arr);
-QuikSorting(arr,0,arr.length - 1)
-console.log(arr);
+//测试排序
+const testSort = require('./testSort.js');//引入测试模块
+for(let i = 0;i < 7;++i){
+	let arr = testSort.getArr();//获得随机生成的数组
+	let temp = arr.slice(0);
+	QuikSorting(arr,0,arr.length-1);
+	testSort.isSame(temp,arr);//测试两个数组是否相同(不管顺序，包含的元素是否相同)
+}

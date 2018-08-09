@@ -1,10 +1,4 @@
 'use strict'
-var arr = [2,6,56,96,12,46,25,36,45,69];
-var arr1 = [894,23,5698,754,325,695,2,36,69];
-console.log(arr1);
-bubble(arr1);
-console.log(arr1);
-
 function bubble(arr){
 	for(let i = 0; i < arr.length - 1;++i){
 		for(let j = 0;j < arr.length - i -1;++j){
@@ -15,4 +9,13 @@ function bubble(arr){
 			}
 		}
 	}
+}
+
+//测试排序
+const testSort = require('./testSort.js');//引入测试模块
+for(let i = 0;i < 7;++i){
+	let arr = testSort.getArr();//获得随机生成的数组
+	let temp = arr.slice(0);
+	bubble(arr);
+	testSort.isSame(temp,arr);//测试两个数组是否相同(不管顺序，包含的元素是否相同)
 }

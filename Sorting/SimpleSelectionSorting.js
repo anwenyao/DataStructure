@@ -1,9 +1,9 @@
 'use strict'
-var arr = [2,6,56,96,12,46,25,36,45,69];
+var arr = [2,6,56,96,12,46,56,36,45,69];
 var arr1 = [894,23,5698,754,325,695,2,36,69];
-console.log(arr1);
-simpleSelection(arr1);
-console.log(arr1);
+console.log(arr);
+simpleSelection(arr);
+console.log(arr);
 function simpleSelection(arr){
 	let index;
 	let temp;

@@ -1,9 +1,9 @@
 'use strict'
 let arr = [2,6,56,96,12,46,25,36,45,69];
 let arr1 = [894,23,5698,754,325,695,2,36,69];
-console.log(arr);
-StraightInsertSorting(arr);
-console.log(arr);
+console.log(arr1);
+StraightInsertSorting(arr1);
+console.log(arr1);
 function StraightInsertSorting(arr){
 	let len = arr.length;
 	let temp;
