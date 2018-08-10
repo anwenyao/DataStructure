@@ -24,3 +24,15 @@ function timeOfStr02(str,s){
 	return count;
 }
 ```
+
+## 使用正则表达式实现trim功能
+```
+var str = "   a     bccc      ";
+String.prototype.trim = function(){
+	var s = "";
+	s = this.replace(/^ */,"").replace(/ *$/,"");//其中，/^ */匹配开头的空格 / *$/匹配结尾的空格
+	return s;
+};
+
+console.log("["+str.trim()+"]");
+```
