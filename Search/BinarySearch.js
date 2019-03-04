@@ -17,5 +17,6 @@ function BinarySearch(arr,key){//数组 要查找的值
 	return -1;//不存在返回-1
 }
 
+
 let arr = [1,2,3,4,6,7,8,9];
 console.log(BinarySearch(arr,10));
