@@ -67,5 +67,5 @@ function longestSubstring1(s){
 }
 
 
-let str = "a";
+let str = "a   ascsadac";
 console.log(longestSubstring(str),longestSubstring1(str));
